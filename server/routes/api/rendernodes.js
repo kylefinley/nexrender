@@ -1,6 +1,6 @@
 'use strict';
 
-const rendernode    = require('../controllers/rendernode');
+const rendernode    = require('../../controllers/api/rendernode');
 
 module.exports = { 
     use: function(router) {

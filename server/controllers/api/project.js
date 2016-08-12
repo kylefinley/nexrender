@@ -10,7 +10,7 @@ let initialized = false;
 class Controller {
 
     /**
-     * Called on loading, creates db connection
+     * Called on first request, creates db connection
      * Binds methods
      */
     initialize() {

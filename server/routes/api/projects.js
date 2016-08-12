@@ -1,7 +1,7 @@
 'use strict';
 
-const promisade     = require('../helpers/promisade');
-const projects      = require('../controllers/project');
+const promisade     = require('../../helpers/promisade');
+const projects      = require('../../controllers/api/project');
 
 module.exports = {
     use: function(router) {
