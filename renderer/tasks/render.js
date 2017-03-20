@@ -25,10 +25,10 @@ module.exports = function(project) {
 
         // NOTE: for still (jpg) image sequence frame filename will be changed to result_[#####].jpg
         // NOTE: if you want to change this field, also goto actions/copy-to-results.js, and apply changes there too
-        if (project.settings && 
-            project.settings.outputExt && 
-            ['jpeg', 'jpg'].indexOf( 
-                project.settings.outputExt.toLowerCase() 
+        if (project.settings &&
+            project.settings.outputExt &&
+            ['jpeg', 'jpg'].indexOf(
+                project.settings.outputExt.toLowerCase()
             ) !== -1
         ) {
             project.resultname = 'result_[#####]' + '.' + outext;
@@ -36,12 +36,12 @@ module.exports = function(project) {
 
         // setup parameters
         params.push('-comp',        project.composition);
-        params.push('-project',     path.join( process.cwd(), project.workpath, project.template ));
-        params.push('-output',      path.join( process.cwd(), project.workpath, project.resultname ));
+        params.push('-project',     path.join(project.workpath, project.template ));
+        params.push('-output',      path.join(project.workpath, project.resultname ));
 
         // advanced parameters
         if (project.settings) {
-            
+
             if (project.settings.outputModule) {
                 params.push('-OMtemplate', project.settings.outputModule);
             }
@@ -96,7 +96,7 @@ module.exports = function(project) {
         });
 
         // on error (logs)
-        ae.stderr.on('data', (data) => {  
+        ae.stderr.on('data', (data) => {
             aedata.push(data.toString());
         });
 
