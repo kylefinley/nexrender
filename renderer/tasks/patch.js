@@ -25,7 +25,7 @@ function replacePath(src, dst) {
 function processTemplateFile(project, callback) {
     // project file template name
     let projectName     = path.join( project.workpath, project.template );
-    let replaceToPath   = path.join( process.cwd(), project.workpath, path.sep); // absolute path
+    let replaceToPath   = path.join( project.workpath, path.sep); // absolute path
 
     // escape single backslash to double in win
     replaceToPath = replaceToPath.replace(/\\/g, '\\\\');
